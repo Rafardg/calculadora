@@ -1,3 +1,69 @@
-<p>
-  pessoa-cadastro works!
-</p>
+<main>
+  <p-card styleClass="card-adjust">
+    <div class="grid col-12">
+      <p-button icon="pi pi-arrow-left" routerLink="/pessoas" pTooltip="Lista Pessoas " tooltipPosition="right">
+      </p-button>
+      <h1>Cadastro de Pessoa</h1>
+    </div>
+
+    <div class="grid flex flex-wrap">
+
+      <div class="col-12 md:col-6 lg:col-3">
+        <span>Nome</span>
+        <input class="w-full" type="text" pInputText upperCase>
+      </div>
+
+      <div class="col-12 md:col-6 lg:col-3">
+        <span>Cpf</span>
+        <input class="w-full" type="text" pInputText upperCase>
+      </div>
+
+      <div class="col-12 md:col-6 lg:col-3">
+        <span>Cep</span>
+        <input class="w-full" type="text" pInputText>
+      </div>
+
+      <div class="col-12 md:col-6 lg:col-3">
+        <span>Logradouro</span>
+        <input class="w-full" type="text" pInputText upperCase>
+      </div>
+
+      <div class="col-12 md:col-6 lg:col-3">
+        <span>Bairro</span>
+        <input class="w-full" type="text" pInputText upperCase>
+      </div>
+
+      <div class="col-12 md:col-6 lg:col-3">
+        <span>Número</span>
+        <input class="w-full" type="text" pInputText upperCase>
+      </div>
+
+      <div class="col-12 md:col-6 lg:col-3">
+        <span>Complemento</span>
+        <input class="w-full" type="text" pInputText upperCase>
+      </div>
+
+      <div class="col-12 md:col-6 lg:col-3">
+        <span>Estado</span>
+        <p-dropdown styleClass="w-full" [options]="estados" name="uf" placeholder="Selecione..." optionLabel="estado"
+          optionValue="uf" (onChange)="buscarCidades(pessoas.uf)" [filter]="true" [virtualScroll]="true"
+          [virtualScrollItemSize]="30" filterBy="uf,estado">
+        </p-dropdown>
+      </div>
+
+      <div class="col-12 md:col-6 lg:col-3">
+        <span>Cidade</span>
+        <p-dropdown styleClass="w-full" [options]="cidadesFiltradas" optionLabel="name">
+        </p-dropdown>
+      </div>
+
+
+      <div class="flex flex-wrap col-12 justify-content-center">
+        <div class="col-12 md:col-6 lg:col-3">
+          <button pButton pRipple type="button" label="Salvar" class="p-button-success w-full"></button>
+        </div>
+      </div>
+
+    </div>
+  </p-card>
+</main>
